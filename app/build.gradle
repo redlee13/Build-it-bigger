@@ -31,6 +31,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+    flavorDimensions 'default'
+    productFlavors {
+        free {
+            dimension = 'default'
+            applicationIdSuffix = '.free'
+        }
+        paid {
+            dimension = 'default'
+            applicationIdSuffix = '.paid'
+        }
+    }
 }
 
 dependencies {
