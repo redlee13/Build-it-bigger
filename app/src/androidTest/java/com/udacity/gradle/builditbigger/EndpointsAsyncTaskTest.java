@@ -9,10 +9,7 @@ import org.junit.runner.RunWith;
 
 import java.util.concurrent.ExecutionException;
 
-import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.assertion.ViewAssertions.matches;
-import static android.support.test.espresso.matcher.ViewMatchers.withId;
-import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -33,6 +30,6 @@ public class EndpointsAsyncTaskTest {
         asyncTask.execute(activityTestRule.getActivity());
 
         String jokeTest = asyncTask.get();
-        onView(withId(R.id.tv_joke)).check(matches(withText(jokeTest)));
+        assertEquals("Joke 1", jokeTest);
     }
 }
